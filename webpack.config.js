@@ -3,7 +3,9 @@ const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const getPackageJson = require('./scripts/getPackageJson');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally');
 
 const {
   version,
@@ -26,13 +28,16 @@ const banner = `
 module.exports = {
   mode: "production",
   devtool: 'source-map',
-  entry: './src/lib/index.ts',
+  entry: './src/lib/index.tsx',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'build'),
-    library: "MyLibrary",
+    library: "DotMatrixChart",
     libraryTarget: 'umd',
     clean: true
+  },
+  externals: {
+    'react': 'react'
   },
   optimization: {
     minimize: true,
@@ -44,18 +49,30 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(m|j|t)s$/,
+        test: /\.(m|j|t|)s$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          }
         }
       },
       {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          { loader: "css-loader", options: { sourceMap: true } },
-        ],
+        test: /\.tsx?$/,
+        loader: 'ts-loader'
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      { 
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.svg$/,
+        use: 'file-loader'
       }
     ]
   },
@@ -63,9 +80,17 @@ module.exports = {
     new MiniCssExtractPlugin({
         filename: 'css/index.css'
     }),
-    new webpack.BannerPlugin(banner)
+    new webpack.BannerPlugin(banner),
+    new HtmlWebpackPlugin(),
+    new MergeIntoSingleFilePlugin({
+      files: {
+        'types/index.d.ts': [
+          path.resolve(__dirname, 'src/sdk/types.ts')
+        ]
+      }
+    })
   ],
   resolve: {
-    extensions: ['.ts', '.js', '.json']
+    extensions: ['.ts', '.js', '.tsx', '.json', ".css", ".scss"]
   }
 };

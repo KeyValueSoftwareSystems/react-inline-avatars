@@ -1,7 +1,3 @@
-import React from 'react';
-import "./index.css";
+import InlineImages from "./inline-images";
 
-const MyLibrary = () => (
-  <div>Your component goes here</div>
-)
-export default MyLibrary;
+export default InlineImages;
