@@ -1,67 +1,169 @@
- <div align="center">
- <img align="center" width="230" src="https://i.imgur.com/iHgtvmg.png" />
-  <h2>Typescript Library Boilerplate Basic</h2>
-  <blockquote>Minimal Library Starter Kit for your Typescript projects</blockquote>
- 
- <a href="https://www.npmjs.com/package/@hodgef/ts-library-boilerplate-basic"><img src="https://badgen.net/npm/v/@hodgef/ts-library-boilerplate-basic?color=blue" alt="npm version"></a> <a href="https://github.com/hodgef/ts-library-boilerplate"><img src="https://img.shields.io/github/last-commit/hodgef/ts-library-boilerplate" alt="latest commit"></a> <a href="https://github.com/hodgef/ts-library-boilerplate-basic/actions"><img alt="Build Status" src="https://github.com/hodgef/ts-library-boilerplate-basic/workflows/Build/badge.svg?color=green" /></a> <a href="https://github.com/hodgef/ts-library-boilerplate-basic/actions"> <img alt="Publish Status" src="https://github.com/hodgef/ts-library-boilerplate-basic/workflows/Publish/badge.svg?color=green" /></a>
 
-<strong>For a plain Javascript alternative, check out [js-library-boilerplate-basic](https://github.com/hodgef/js-library-boilerplate-basic).</strong>
+  
+  
 
+# React Multi Inline Images
+
+<!-- <a href="https://www.npmjs.com/package/@keyvaluesystems/react-dot-matrix-chart"><img src="https://badgen.net/npm/v/@keyvaluesystems/react-dot-matrix-chart?color=blue" alt="npm version"></a> <a href="https://www.npmjs.com/package/@keyvaluesystems/react-dot-matrix-chart" ><img src="https://img.shields.io/npm/dw/@keyvaluesystems/react-dot-matrix-chart?label=Downloads" /></a> <a href="https://github.com/KeyValueSoftwareSystems/react-dot-matrix-chart"><img src="https://github.com/KeyValueSoftwareSystems/react-dot-matrix-chart/actions/workflows/deploy.yml/badge.svg" alt="" /></a> -->
+
+<div align="center">
+<img src="./screenshot.png" alt="" width="250" height="80"/>
 </div>
 
-## ⭐️ Features
+ 
+>A customizable ready to use Multiple Inline Image stack for React
 
-- Webpack 5
-- Babel 7
-- Hot reloading (`npm start`)
-- Automatic Types file generation (index.d.ts)
-- UMD exports, so your library works everywhere.
-- Jest unit testing
-- Customizable file headers for your build [(Example 1)](https://github.com/hodgef/ts-library-boilerplate-basic/blob/master/build/index.js) [(Example2)](https://github.com/hodgef/ts-library-boilerplate-basic/blob/master/build/css/index.css)
-- Daily [dependabot](https://dependabot.com) dependency updates
+<!-- Try tweaking a dot matrix using this codesandbox link <a href="https://codesandbox.io/s/dot-matrix-chart-hqw9z0" >here</a> -->
 
-## 📦 Getting Started
+## Installation
 
-```
-git clone https://github.com/hodgef/ts-library-boilerplate-basic.git myLibrary
-npm install
+The easiest way to use react-multi-inline-images is to install it from npm and build it into your app with Webpack.
+
+```bash
+npm install @keyvaluesystems/react-multi-inline-images
 ```
 
-## 💎 Customization
+You’ll need to install React separately since it isn't included in the package.
 
-> Before shipping, make sure to:
+  
 
-1. Edit `LICENSE` file
-2. Edit `package.json` information (These will be used to generate the headers for your built files)
-3. Edit `library: "MyLibrary"` with your library's export name in `./webpack.config.js`
+## Usage
 
-## 🚀 Deployment
+React Multi Inline Images can run in a very basic mode by just providing the `data` like given below:
 
-1. `npm publish`
-2. Your users can include your library as usual
+```jsx
 
-### npm
+import InlineImages from '@keyvaluesystems/react-multi-inline-images';
 
-```
-import MyLibrary from 'my-library';
-const libraryInstance = new MyLibrary();
-...
-```
-
-### self-host/cdn
+<InlineImages
+  data={dataArray}
+/>
 
 ```
-<script src="build/index.js"></script>
 
-const MyLibrary = window.MyLibrary.default;
-const libraryInstance = new MyLibrary();
-...
+The data is an array of objects with the following keys:
+
+-  `name` - a string that represents each user's name
+-  `avatarUrl` - a string to specify the user image
+
+
+An example for data array is shown below:
+
+```jsx
+const dataArray = [
+  {
+    name: 'User 1',
+    avatarUrl: 'example.svg'
+  },
+  {
+    name: 'User 2'
+  }
+];
+
 ```
 
-## ✅ Libraries built with this boilerplate
+If no avatarUrl is specified for the user, following default Image will be considered.
 
-> Made a library using this starter kit? Share it here by [submitting a pull request](https://github.com/hodgef/ts-library-boilerplate-basic/pulls)!
+<div align="center">
+<img src="./src/lib/inline-images/assets/default-image.svg" alt="" width="40" height="40"/>
+</div>
 
-- [simple-keyboard](https://github.com/hodgef/simple-keyboard) - Javascript Virtual Keyboard
-- [react-simple-keyboard](https://github.com/hodgef/react-simple-keyboard) - React Virtual Keyboard
-- [simple-keyboard-layouts](https://github.com/hodgef/simple-keyboard-layouts) - Keyboard layouts for simple-keyboard
+You can specify whether to add an elivation effect or to show name on hover with the help of 'elivateOnHover' and 'nameOnHover' prop. Even if elivateOnHover is true, the effect will only be there if the corresponding user has name specified in the data object.
+
+```jsx
+<InlineImages
+  data={dataArray}
+  elivateOnHover={true}
+  nameOnHover={true}
+/>
+```
+
+We can also control the distance between each user image with the help of spaceBetweenPics prop as follows.
+
+```jsx
+<InlineImages
+  data={dataArray}
+  spaceBetweenPics={30}
+/>
+```
+## Props
+
+  
+
+Props that can be passed to the component are listed below:
+
+<table>
+  <thead>
+    <tr>
+      <th>Prop</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code><b>data:</b> object[]</code></td>
+      <td>
+      An array of user objects to specify the name and avatar url (image url)
+      </td>
+      <td><code>undefined</code></td>
+    </tr>
+    <tr>
+      <td><code><b>totalUserCount?:</b> number</code></td>
+      <td>
+      To specify the total number of users present if the additional count is to be displayed at the end of the image stack. The additional count displayed will be the difference between this value and length of data array
+      </td>
+      <td><code>0</code></td>
+    </tr>
+    <tr>
+      <td><code><b>elivateOnHover?:</b> boolean</code></td>
+      <td>
+      To add an elivation effect on hover action for user images
+      </td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td><code><b>nameOnHover?:</b> boolean</code></td>
+      <td>
+        To show the name of each user on hovering over the user image
+      </td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td><code><b>onUserClick?:</b> function</code></td>
+      <td>
+        A callback function to be triggered on image click
+      </td>
+      <td><code>undefined</code></td>
+    </tr>
+    <tr>
+      <td><code><b>spaceBetweenPics?:</b> number</code></td>
+      <td>
+        To specify the distance between each avatar (user image)
+      </td>
+      <td><code>20px</code></td>
+    </tr>
+  </tbody>
+</table>
+
+
+## Style Customizations
+
+All the default styles provided by this package are overridable using the `styles` prop.
+the below code shows all the overridable styles:
+
+```jsx
+<InlineImages
+  data={dataArray}
+  styles={{
+    Avatar: () => ({...styles}),
+    Name: () => ({...styles}),
+    ExtraValue: () => ({...styles})
+  }}
+/>
+
+```
+
+-  `Avatar` - overrides the avatar (user image) style
+-  `Name` - overrides the user name style
+-  `ExtraValue` - overrides the style of additional value displayed at last

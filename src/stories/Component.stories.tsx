@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Component from '../lib';
+import avatarImage1 from './avatar-image-1.svg';
 
 export default {
     title: 'Storybook/Component',
@@ -11,11 +12,22 @@ export default {
     },
   } as ComponentMeta<typeof Component>;
 
-  const Template: ComponentStory<typeof Component> = () => <Component />;
+  const Template: ComponentStory<typeof Component> = (props) => <Component {...props} />;
 
 export const ComponentExample = Template.bind({});
 ComponentExample.args = {
-  steps: [{
-    label: 'Jane Doe',
+  data: [{
+  },
+  {
+    avatarUrl: avatarImage1,
+    name: 'Jon Dew'
   }],
+  totalUserCount: 10,
+  elivateOnHover: true,
+  nameOnHover: true,
+  styles: {
+    Name: () => ({
+      color: 'green'
+    })
+  }
 };
