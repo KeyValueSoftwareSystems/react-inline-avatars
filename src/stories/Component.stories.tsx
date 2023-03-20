@@ -2,9 +2,6 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Component from '../lib';
 import avatarImage1 from './avatar-image-1.svg';
-import avatarImage2 from './avatar-image-2.svg';
-import avatarImage3 from './avatar-image-3.svg';
-import avatarImage4 from './avatar-image-4.svg';
 
 export default {
     title: 'Storybook/Component',
@@ -20,20 +17,10 @@ export default {
 export const ComponentExample = Template.bind({});
 ComponentExample.args = {
   data: [{
-    avatarUrl: avatarImage1
   },
   {
-    avatarUrl: avatarImage2,
+    avatarUrl: avatarImage1,
     name: 'Jon Dew'
-  },
-  {
-    avatarUrl: avatarImage3
-  },
-  {
-    avatarUrl: avatarImage4
-  },
-  {
-
   }],
   totalUserCount: 10,
   elivateOnHover: true,

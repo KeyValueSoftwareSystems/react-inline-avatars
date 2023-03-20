@@ -16,7 +16,6 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
     spaceBetweenPics,
     styles = {}
   } = props;
-  const getLeftValue = (index: number): number => index * (spaceBetweenPics ?? DEFAULT_SPACE_BETWEEN_PICS);
   return (
     <div>
       <div className={classes.imagesContainer}>
@@ -25,7 +24,7 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
             key={v4()}
             className={classes.eachImage}
             style={{
-              left: `${getLeftValue(index)}px`
+              left: `${index * (spaceBetweenPics ?? DEFAULT_SPACE_BETWEEN_PICS)}px`
             }}
           >
             <Avatar
@@ -42,10 +41,9 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
         ))}
         {totalUserCount && totalUserCount > data?.length && (
           <div
-            key={v4()}
             className={`${classes.eachImage} ${classes.extraValue} ${elivateOnHover && classes.elivateOnHover}`}
             style={{
-              left: `${getLeftValue(data?.length)}px`,
+              left: `${data?.length * (spaceBetweenPics ?? DEFAULT_SPACE_BETWEEN_PICS)}px`,
               cursor: onUserClick && 'pointer',
               ...getStyles(Elements.ExtraValue, styles)
             }}
