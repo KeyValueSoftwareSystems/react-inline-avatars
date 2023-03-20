@@ -111,7 +111,7 @@ Props that can be passed to the component are listed below:
     <tr>
       <td><code><b>totalUserCount?:</b> number</code></td>
       <td>
-      To specify the total number of users present if the additional count is to be displayed at the end of the image stack
+      To specify the total number of users present if the additional count is to be displayed at the end of the image stack. The additional count displayed will be the difference between this value and length of data array
       </td>
       <td><code>0</code></td>
     </tr>
