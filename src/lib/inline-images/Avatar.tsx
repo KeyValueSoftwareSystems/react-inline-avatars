@@ -12,7 +12,8 @@ const Avatar = (props: AvatarPropType): JSX.Element => {
     nameOnHover,
     onUserClick,
     name,
-    styles = {}
+    styles = {},
+    id
   } = props;
   return (
     <div
@@ -21,6 +22,7 @@ const Avatar = (props: AvatarPropType): JSX.Element => {
       style={{
         cursor: onUserClick && 'pointer'
       }}
+      id={id}
     >
       <img
         src={avatarUrl}

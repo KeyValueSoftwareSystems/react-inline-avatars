@@ -26,15 +26,17 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
             style={{
               left: `${index * (spaceBetweenPics ?? DEFAULT_SPACE_BETWEEN_PICS)}px`
             }}
+            id="inline-images"
           >
             <Avatar
               avatarUrl={user.avatarUrl}
               name={user.name}
               elivateOnHover={elivateOnHover}
               nameOnHover={nameOnHover}
-              onUserClick={onUserClick && ((): void => {
-                onUserClick(user);
-              })}
+              onUserClick={(): void => {
+                if (onUserClick) onUserClick(user);
+              }}
+              id={`inline-image-${index}`}
               styles={styles}
             />
           </div>
@@ -47,6 +49,7 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
               cursor: onUserClick && 'pointer',
               ...getStyles(Elements.ExtraValue, styles)
             }}
+            id="inline-images-extra-value"
           >
             {totalUserCount - data?.length} +
           </div>
