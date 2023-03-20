@@ -3,12 +3,13 @@ export interface AvatarPropType {
   name?: string,
   elivateOnHover?: boolean,
   nameOnHover?: boolean,
-  onUserClick: function,
-  styles?: StyleProp
+  onUserClick?: function,
+  styles?: StyleProp,
+  id?: string
 }
 
 export interface InlineImagesPropType {
-  data: [AvatarPropType],
+  data: AvatarPropType[],
   totalUserCount?: number,
   elivateOnHover?: boolean,
   nameOnHover?: boolean,
