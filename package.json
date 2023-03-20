@@ -21,11 +21,11 @@
   },
   "repository": {
     "type": "github",
-    "url": "https://github.com/KeyValueSoftwareSystems/react-vertical-stepper"
+    "url": "https://github.com/KeyValueSoftwareSystems/react-multi-inline-images"
   },
   "author": "Keyvalue",
   "license": "",
-  "homepage": "https://github.com/KeyValueSoftwareSystems/react-vertical-stepper",
+  "homepage": "https://github.com/KeyValueSoftwareSystems/react-multi-inline-images",
   "keywords": [
     "library",
     "starter",
