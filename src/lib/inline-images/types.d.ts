@@ -3,7 +3,7 @@ export interface AvatarPropType {
   name?: string,
   elivateOnHover?: boolean,
   nameOnHover?: boolean,
-  onUserClick?: function,
+  onUserClick?: () => void,
   styles?: StyleProp,
   id?: string
 }

@@ -52,11 +52,11 @@ An example for data array is shown below:
 ```jsx
 const dataArray = [
   {
-    name: 'User 1',
+    name: 'Jon Dew',
     avatarUrl: 'example.svg'
   },
   {
-    name: 'User 2'
+    name: 'Jack'
   }
 ];
 
