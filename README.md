@@ -7,7 +7,7 @@
 <a href="https://www.npmjs.com/package/@keyvaluesystems/react-multi-inline-images"><img src="https://badgen.net/npm/v/@keyvaluesystems/react-multi-inline-images?color=blue" alt="npm version"></a> <a href="https://www.npmjs.com/package/@keyvaluesystems/react-multi-inline-images" ><img src="https://img.shields.io/npm/dw/@keyvaluesystems/react-multi-inline-images?label=Downloads" /></a> <a href="https://github.com/KeyValueSoftwareSystems/react-multi-inline-images"><img src="https://github.com/KeyValueSoftwareSystems/react-multi-inline-images/actions/workflows/deploy.yml/badge.svg" alt="" /></a>
 
 <div align="center">
-<img src="./screenshot.png" alt="" width="250" height="80"/>
+<img src="./screenshot.png" alt="" width="280" height="80"/>
 </div>
 
  
