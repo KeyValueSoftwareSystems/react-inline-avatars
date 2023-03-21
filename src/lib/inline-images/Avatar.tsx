@@ -1,13 +1,12 @@
 import React from 'react';
 import { AvatarPropType } from './types';
 import classes from './styles.module.scss';
-import defaultImage from './assets/default-image.svg';
 import { Elements } from './constants';
 import { getStyles } from './utils/utils';
 
 const Avatar = (props: AvatarPropType): JSX.Element => {
   const {
-    avatarUrl = defaultImage,
+    avatarUrl,
     elivateOnHover,
     nameOnHover,
     onUserClick,
@@ -25,9 +24,17 @@ const Avatar = (props: AvatarPropType): JSX.Element => {
       id={id}
     >
       <img
-        src={avatarUrl}
         className={(elivateOnHover && classes.elivateOnHover) || ''}
-        style={getStyles(Elements.Avatar, styles)}
+        style={
+          {
+            ...getStyles(Elements.Avatar, styles),
+            content: avatarUrl && `url(${avatarUrl})`
+          }
+        }
+        onError={(e:React.SyntheticEvent<HTMLImageElement, Event>): void => {
+          e.currentTarget.src = ''
+        }}
+        alt=""
       />
       {nameOnHover && name &&(
         <div

@@ -13,6 +13,7 @@
     border-radius: 50%;
     border: 3px solid white;
     transition: all 0.3s;
+    content: url('./assets/default-image.svg');
     &:hover + .name{
         display: flex;
         position: absolute;
