@@ -13,7 +13,7 @@
  
 >A customizable ready to use Multiple Inline Image stack for React
 
-<!-- Try tweaking a dot matrix using this codesandbox link <a href="https://codesandbox.io/s/dot-matrix-chart-hqw9z0" >here</a> -->
+Try tweaking a dot matrix using this codesandbox link <a href="https://codesandbox.io/s/react-multi-inline-images-6wmoko" >here</a>
 
 ## Installation
 
