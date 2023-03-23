@@ -83,9 +83,6 @@ module.exports = {
     new HtmlWebpackPlugin()
   ],
   resolve: {
-    extensions: ['.ts', '.js', '.tsx', '.json', ".css", ".scss"],
-    alias: {
-      'assets': path.resolve(__dirname, 'src/assets')
-    }
+    extensions: ['.ts', '.js', '.tsx', '.json', ".css", ".scss"]
   }
 };

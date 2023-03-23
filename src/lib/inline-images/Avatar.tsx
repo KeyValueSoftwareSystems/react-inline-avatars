@@ -3,7 +3,7 @@ import { AvatarPropType } from './types';
 import classes from './styles.module.scss';
 import { Elements } from './constants';
 import { getStyles } from './utils/utils';
-import defaultImage from 'assets/default-image.svg';
+import defaultImage from '../../assets/default-image.svg';
 
 const Avatar = (props: AvatarPropType): JSX.Element => {
   const {
