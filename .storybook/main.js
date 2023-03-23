@@ -19,7 +19,12 @@ module.exports = {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
         include: path.resolve(__dirname, '../')
-      }]
+      }],
+      resolve: {
+        alias: {
+          'assets': path.resolve(__dirname, '../src/assets')
+        }
+      }
     });
     return config;
   }

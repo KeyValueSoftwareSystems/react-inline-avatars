@@ -5,3 +5,5 @@ export enum Elements {
   ExtraValue = "ExtraValue",
   Name = "Name"
 }
+
+export const DEFAULT_AVATAR_HEIGHT = 41;

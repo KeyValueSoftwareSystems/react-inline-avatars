@@ -3,10 +3,11 @@ import { AvatarPropType } from './types';
 import classes from './styles.module.scss';
 import { Elements } from './constants';
 import { getStyles } from './utils/utils';
+import defaultImage from 'assets/default-image.svg';
 
 const Avatar = (props: AvatarPropType): JSX.Element => {
   const {
-    avatarUrl,
+    avatarUrl = defaultImage,
     elivateOnHover,
     nameOnHover,
     onUserClick,
@@ -25,16 +26,12 @@ const Avatar = (props: AvatarPropType): JSX.Element => {
     >
       <img
         className={(elivateOnHover && classes.elivateOnHover) || ''}
-        style={
-          {
-            ...getStyles(Elements.Avatar, styles),
-            content: avatarUrl && `url(${avatarUrl})`
-          }
-        }
+        src={avatarUrl}
+        style={getStyles(Elements.Avatar, styles)}
         onError={(e:React.SyntheticEvent<HTMLImageElement, Event>): void => {
           e.currentTarget.src = ''
         }}
-        alt=""
+        alt="image"
       />
       {nameOnHover && name &&(
         <div

@@ -13,13 +13,13 @@ export interface InlineImagesPropType {
   totalUserCount?: number,
   elivateOnHover?: boolean,
   nameOnHover?: boolean,
-  onUserClick?: (user: AvatarPropType) => {},
+  onUserClick?: (user: AvatarPropType) => object,
   spaceBetweenPics?: number,
   styles?: StyleProp
 }
 
 export type StyleProp = {
-  Avatar?: () => {},
-  ExtraValue?: () => {},
-  Name?: () => {}
+  Avatar?: () => object ,
+  ExtraValue?: () => object,
+  Name?: () => object
 }
