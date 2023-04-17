@@ -65,7 +65,7 @@ const dataArray = [
 If no avatarUrl is specified for the user, following default Image will be considered.
 
 <div align="center">
-<img src="./src/lib/inline-images/assets/default-image.svg" alt="" width="40" height="40"/>
+<img src="./src/assets/default-image.svg" alt="" width="40" height="40"/>
 </div>
 
 You can specify whether to add an elivation effect or to show name on hover with the help of 'elivateOnHover' and 'nameOnHover' prop. Even if elivateOnHover is true, the effect will only be there if the corresponding user has name specified in the data object.
