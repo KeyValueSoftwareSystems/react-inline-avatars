@@ -1,15 +1,16 @@
-import React from 'react';
+import React from "react";
 import {
-    render,
-    fireEvent,
-    queryByAttribute,
-    queryAllByAttribute
+  render,
+  fireEvent,
+  queryByAttribute,
+  queryAllByAttribute
 } from "@testing-library/react";
-import { InlineImagesPropType } from '../inline-images/types';
-import InlineImages from '../inline-images';
 
-const getById = queryByAttribute.bind(null, 'id');
-const getAllById = queryAllByAttribute.bind(null, 'id');
+import { InlineImagesPropType } from "../inline-images/types";
+import InlineImages from "../inline-images";
+
+const getById = queryByAttribute.bind(null, "id");
+const getAllById = queryAllByAttribute.bind(null, "id");
 
 test("If all the users in data is rendered", async () => {
   const inlineImagesProp: InlineImagesPropType = {
@@ -23,16 +24,13 @@ test("If all the users in data is rendered", async () => {
   }
 });
 
-test("If the Onclick is triggered on images",async () => {
+test("If the Onclick is triggered on images", async () => {
   const inlineImagesProp: InlineImagesPropType = {
     data: [{}]
   };
   const onClick = jest.fn();
   const dom = render(
-    <InlineImages
-      {...inlineImagesProp}
-      onUserClick={onClick}
-    />
+    <InlineImages {...inlineImagesProp} onUserClick={onClick} />
   );
 
   if (dom) {
@@ -42,7 +40,7 @@ test("If the Onclick is triggered on images",async () => {
   }
 });
 
-test("If additional count displayed on image stack",async () => {
+test("If additional count displayed on image stack", async () => {
   const inlineImagesProp: InlineImagesPropType = {
     data: [{}, {}],
     totalUserCount: 10
@@ -51,7 +49,24 @@ test("If additional count displayed on image stack",async () => {
   const dom = render(<InlineImages {...inlineImagesProp} />);
 
   if (dom) {
-    const extraValue = await getById(dom.container, "inline-images-extra-value");
-    expect(extraValue.innerHTML).toBe("8 +");
+    const extraCount = await getById(dom.container, "inline-images-extra-count");
+    expect(extraCount.innerHTML).toBe("8 +");
   }
-})
+});
+
+test("If the Onclick is triggered on count click", async () => {
+  const inlineImagesProp: InlineImagesPropType = {
+    data: [{}, {}, {}],
+    totalUserCount: 10
+  };
+  const onClick = jest.fn();
+  const dom = render(
+    <InlineImages {...inlineImagesProp}  onCountClick={onClick} />
+  );
+
+  if (dom) {
+    const image = await getById(dom.container, "inline-images-extra-count");
+    fireEvent.click(image);
+    expect(onClick).toBeCalled();
+  }
+});
