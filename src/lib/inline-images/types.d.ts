@@ -1,8 +1,10 @@
 export interface AvatarPropType {
   avatarUrl?: string,
   name?: string,
-  elivateOnHover?: boolean,
-  nameOnHover?: boolean,
+  variant?: string,
+  size?: number,
+  elevateOnHover?: boolean,
+  showNameOnHover?: boolean,
   onUserClick?: () => void,
   styles?: StyleProp,
   id?: string
@@ -11,15 +13,18 @@ export interface AvatarPropType {
 export interface InlineImagesPropType {
   data: AvatarPropType[],
   totalUserCount?: number,
-  elivateOnHover?: boolean,
-  nameOnHover?: boolean,
+  variant?: string,
+  elevateOnHover?: boolean,
+  showNameOnHover?: boolean,
   onUserClick?: (user: AvatarPropType) => object,
+  onCountClick?: () => void,
   spaceBetweenPics?: number,
+  size?: number;
   styles?: StyleProp
 }
 
 export type StyleProp = {
   Avatar?: () => object ,
-  ExtraValue?: () => object,
+  ExtraCount?: () => object,
   Name?: () => object
 }

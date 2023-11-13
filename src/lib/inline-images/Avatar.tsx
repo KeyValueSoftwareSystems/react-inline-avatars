@@ -1,15 +1,18 @@
-import React from 'react';
-import { AvatarPropType } from './types';
-import classes from './styles.module.scss';
-import { Elements } from './constants';
-import { getStyles } from './utils/utils';
-import defaultImage from '../../assets/default-image.svg';
+import React from "react";
+
+import defaultImage from "../../assets/default-avatar.svg";
+import { Elements } from "./constants";
+import { getStyles } from "./utils/utils";
+import { AvatarPropType } from "./types";
+import classes from "./styles.module.scss";
 
 const Avatar = (props: AvatarPropType): JSX.Element => {
   const {
     avatarUrl = defaultImage,
-    elivateOnHover,
-    nameOnHover,
+    variant,
+    size,
+    elevateOnHover,
+    showNameOnHover,
     onUserClick,
     name,
     styles = {},
@@ -17,27 +20,30 @@ const Avatar = (props: AvatarPropType): JSX.Element => {
   } = props;
   return (
     <div
-      className={classes.avatarContainer}
+      className={`${classes.avatarContainer}`}
       onClick={onUserClick}
       style={{
-        cursor: onUserClick && 'pointer'
+        cursor: onUserClick && "pointer"
       }}
       id={id}
     >
       <img
-        className={(elivateOnHover && classes.elivateOnHover) || ''}
+        className={`${variant && classes[variant]} ${
+          elevateOnHover && classes.elevateOnHover
+        }`}
         src={avatarUrl}
-        style={getStyles(Elements.Avatar, styles)}
-        onError={(e:React.SyntheticEvent<HTMLImageElement, Event>): void => {
-          e.currentTarget.src = ''
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          ...getStyles(Elements.Avatar, styles)
+        }}
+        onError={(e: React.SyntheticEvent<HTMLImageElement, Event>): void => {
+          e.currentTarget.src = "";
         }}
         alt="image"
       />
-      {nameOnHover && name &&(
-        <div
-          className={classes.name}
-          style={getStyles(Elements.Name, styles)}
-        >
+      {showNameOnHover && name && (
+        <div className={classes.name} style={getStyles(Elements.Name, styles)}>
           {name}
         </div>
       )}

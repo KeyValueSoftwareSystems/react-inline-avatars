@@ -2,8 +2,8 @@ export const DEFAULT_SPACE_BETWEEN_PICS = 20;
 
 export enum Elements {
   Avatar = "Avatar",
-  ExtraValue = "ExtraValue",
+  ExtraCount = "ExtraCount",
   Name = "Name"
 }
 
-export const DEFAULT_AVATAR_HEIGHT = 41;
+export const DEFAULT_AVATAR_SIZE = 40;
