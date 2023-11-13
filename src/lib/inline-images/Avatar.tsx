@@ -20,7 +20,7 @@ const Avatar = (props: AvatarPropType): JSX.Element => {
   } = props;
   return (
     <div
-      className={`${classes.avatarContainer}`}
+      className={classes.avatarContainer}
       onClick={onUserClick}
       style={{
         cursor: onUserClick && "pointer"

@@ -154,7 +154,7 @@ Props that can be passed to the component are listed below:
       <td><code>40px</code></td>
     </tr>
      <tr>
-      <td><code><b>variant?:</b> string</code></td>
+      <td><code><b>variant?:</b> 'circular' | 'square' | 'rounded'</code></td>
       <td>
       To specify the shape of the image element
       </td>
@@ -200,7 +200,7 @@ Props that can be passed to the component are listed below:
       <td>
         To override the default styles provided by this package. <ul> 
         <li> Avatar - overrides the avatar (user image) style </li>
-        <li>Name - overrides the user name style</li>
+        <li> Name - overrides the user name style</li>
         <li> ExtraCount - overrides the style of additional count displayed at last bubble </li>
         </ul>
       </td>
