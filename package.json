@@ -109,5 +109,8 @@
       "jsx",
       "node"
     ]
+  },
+  "dependencies": {
+    "eslint-plugin-import": "^2.29.0"
   }
 }

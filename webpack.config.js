@@ -31,7 +31,7 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'build'),
-    library: "DotMatrixChart",
+    library: "MultipleInlineImages",
     libraryTarget: 'umd',
     clean: true
   },
