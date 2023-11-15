@@ -38,12 +38,13 @@ const Avatar = (props: AvatarPropType): JSX.Element => {
           ...getStyles(Elements.Avatar, styles)
         }}
         onError={(e: React.SyntheticEvent<HTMLImageElement, Event>): void => {
-          e.currentTarget.src = "";
+          e.currentTarget.src = defaultImage;
         }}
+        id="avatar-image"
         alt="image"
       />
       {showNameOnHover && name && (
-        <div className={classes.name} style={getStyles(Elements.Name, styles)}>
+        <div id="avatar-name" className={classes.name} style={getStyles(Elements.Name, styles)}>
           {name}
         </div>
       )}
