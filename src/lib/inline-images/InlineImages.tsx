@@ -1,5 +1,4 @@
 import React from "react";
-import { v4 } from "uuid";
 
 import {
   DEFAULT_AVATAR_SIZE,
@@ -20,16 +19,16 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
     onUserClick,
     onCountClick,
     size = DEFAULT_AVATAR_SIZE,
-    variant = 'circular',
+    variant = "circular",
     spaceBetweenPics = DEFAULT_SPACE_BETWEEN_PICS,
     styles = {}
   } = props;
 
   return (
-    <div className={classes.imagesContainer} >
+    <div className={classes.imagesContainer}>
       {data?.map((user: AvatarDataType, index: number) => (
         <div
-          key={v4()}
+          key={user && user.name ?`${user.name}-${index}`: index}
           className={classes.eachImage}
           style={{
             left: `${index * spaceBetweenPics}px`
@@ -53,10 +52,12 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
       ))}
       {totalUserCount && totalUserCount > data?.length && (
         <div
-          className={`${classes.eachImage} ${classes.extraCount} ${elevateOnHover && classes.elevateOnHover}
+          className={`${classes.eachImage} ${classes.extraCount} ${
+            elevateOnHover && classes.elevateOnHover
+          }
             ${classes[variant]}`}
           style={{
-            left: `${data?.length * (spaceBetweenPics)}px`,
+            left: `${data?.length * spaceBetweenPics}px`,
             width: `${size}px`,
             height: `${size}px`,
             ...getStyles(Elements.ExtraCount, styles)

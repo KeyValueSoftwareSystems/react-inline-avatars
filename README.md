@@ -25,15 +25,6 @@ npm install @keyvaluesystems/react-multi-inline-images
 
 You’ll need to install React separately since it isn't included in the package.
 
-## v1.1.5 (Major Version Change)
-
-This release includes breaking changes, new features, and updates. Please read this document carefully before upgrading
-
-### Breaking Changes
-- `elivateOnHover` prop is renamed to `elevateOnHover`
-- `nameOnHover` prop is renamed to `showNameOnHover`
-- `ExtraValue` class is renamed to `ExtraCount`
-
 ## Usage
 
 React Multi Inline Images can run in a very basic mode by just providing the `data` like given below:
@@ -75,6 +66,52 @@ If no avatarUrl is specified for the user, following default Image will be consi
 <img src="./src/assets/default-avatar.svg" alt="" width="40" height="40"/>
 </div>
 
+
+## v1.1.5 (Major Version Change)
+
+This release includes breaking changes, new features, and updates. Please read this document carefully before upgrading
+
+### Breaking Changes
+- `elivateOnHover` prop is renamed to `elevateOnHover`.
+- `nameOnHover` prop is renamed to `showNameOnHover`.
+- `ExtraValue` class is renamed to `ExtraCount`.
+
+
+### Migration Steps
+
+- Replace `elivateOnHover` with elevateOnHover: The `elivateOnHover` prop has been replaced with `elevateOnHover`.
+- Replace `nameOnHover` with showNameOnHover: The `nameOnHover` prop has been replaced with `showNameOnHover`.
+- Utilize `ExtraCount` class instead of `ExtraValue` class: To overrides the style of additional count displayed at last bubble.
+
+<b>Before</b>
+
+```jsx
+<InlineImages
+  data={dataArray}
+  elivateOnHover={true}
+  nameOnHover={true}
+  styles={{
+    Avatar: () => ({ ...styles }),
+    Name: () => ({ ...styles }),
+    ExtraValue: () => ({ ...styles }),
+  }}
+/>
+```
+
+<b>After</b>
+
+```jsx
+<InlineImages
+  data={dataArray}
+  elevateOnHover={true}
+  showNameOnHover={true}
+  styles={{
+    Avatar: () => ({ ...styles }),
+    Name: () => ({ ...styles }),
+    ExtraCount: () => ({ ...styles }),
+  }}
+/>
+```
 ## Props
 
   
