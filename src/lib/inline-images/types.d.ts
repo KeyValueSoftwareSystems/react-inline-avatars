@@ -10,13 +10,18 @@ export interface AvatarPropType {
   id?: string
 }
 
+export interface AvatarDataType {
+  avatarUrl?: string,
+  name?: string
+}
+
 export interface InlineImagesPropType {
-  data: AvatarPropType[],
+  data: AvatarDataType[],
   totalUserCount?: number,
   variant?: 'circular' | 'square' | 'rounded',
   elevateOnHover?: boolean,
   showNameOnHover?: boolean,
-  onUserClick?: (user: AvatarPropType) => object,
+  onUserClick?: (user: AvatarDataType) => object,
   onCountClick?: () => void,
   spaceBetweenPics?: number,
   size?: number;

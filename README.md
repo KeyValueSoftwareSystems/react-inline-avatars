@@ -25,56 +25,14 @@ npm install @keyvaluesystems/react-multi-inline-images
 
 You’ll need to install React separately since it isn't included in the package.
 
-## Release Notes
+## v1.1.5 (Major Version Change)
 
-Release Notes - Version 0.1.6
-
->The release contains some breaking changes
+This release includes breaking changes, new features, and updates. Please read this document carefully before upgrading
 
 ### Breaking Changes
-<ul>
-<li>Renamed Props</li>
-<table>
-  <thead>
-    <tr>
-      <th>Old name</th>
-      <th>New name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>elivateOnHover</code></td>
-      <td>
-       <code>elivateOnHover</code>
-      </td>
-    </tr>
-     <tr>
-      <td><code>nameOnHover</code></td>
-      <td>
-       <code>showNameOnHover</code>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-
-<li>Renamed CSS classes</li>
-<table>
-  <thead>
-    <tr>
-      <th>Old name</th>
-      <th>New name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ExtraValue</code></td>
-      <td>
-       <code>ExtraCount</code>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</ul>
+- `elivateOnHover` prop is renamed to `elevateOnHover`
+- `nameOnHover` prop is renamed to `showNameOnHover`
+- `ExtraValue` class is renamed to `ExtraCount`
 
 ## Usage
 
@@ -198,11 +156,7 @@ Props that can be passed to the component are listed below:
      <tr>
       <td><code><b>styles?:</b> object</code></td>
       <td>
-        To override the default styles provided by this package. <ul> 
-        <li> Avatar - overrides the avatar (user image) style </li>
-        <li> Name - overrides the user name style</li>
-        <li> ExtraCount - overrides the style of additional count displayed at last bubble </li>
-        </ul>
+        To override the default styles provided by this package. 
       </td>
       <td><code>undefined</code></td>
     </tr>
@@ -212,6 +166,7 @@ Props that can be passed to the component are listed below:
 
 ## Style Customizations
 
+All the default styles provided by this package are overridable using the `style` prop.
 The below code shows all the overridable styles:
 
 ```jsx
@@ -225,3 +180,6 @@ The below code shows all the overridable styles:
 />
 
 ```
+-  `Avatar` - overrides the avatar (user image) style
+-  `Name` - overrides the user name style 
+-  `ExtraCount` - overrides the style of additional count displayed at last bubble

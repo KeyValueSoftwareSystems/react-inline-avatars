@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { AvatarPropType } from "../lib/inline-images/types";
+import { AvatarDataType } from "../lib/inline-images/types";
 import Component from "../lib";
 import sampleAvatarImage from "../assets/sample-avatar.svg";
 
@@ -74,7 +74,7 @@ ComponentWithEventHandlers.args = {
   totalUserCount: 6,
   elevateOnHover: true,
   showNameOnHover: true,
-  onUserClick: (user: AvatarPropType) => {
+  onUserClick: (user: AvatarDataType) => {
     alert(`Clicked on user: ${user.name}`);
   },
   onCountClick: () => {

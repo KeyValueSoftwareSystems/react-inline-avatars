@@ -7,7 +7,7 @@ import {
   Elements
 } from "./constants";
 import { getStyles } from "./utils/utils";
-import { AvatarPropType, InlineImagesPropType } from "./types";
+import { AvatarDataType, InlineImagesPropType } from "./types";
 import Avatar from "./Avatar";
 import classes from "./styles.module.scss";
 
@@ -27,7 +27,7 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
 
   return (
     <div className={classes.imagesContainer} >
-      {data?.map((user: AvatarPropType, index: number) => (
+      {data?.map((user: AvatarDataType, index: number) => (
         <div
           key={v4()}
           className={classes.eachImage}
