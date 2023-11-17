@@ -13,7 +13,7 @@
  
 > A customizable ready to use Multiple Inline Image stack for React
 
-Try tweaking a multiple inline image stack using this codesandbox link <a href="https://codesandbox.io/s/react-multi-inline-images-6wmoko" >here</a>
+Try tweaking a multiple inline image stack using this codesandbox link <a href="https://codesandbox.io/s/react-multi-inline-images-2lvdgf" >here</a>
 
 ## Installation
 
