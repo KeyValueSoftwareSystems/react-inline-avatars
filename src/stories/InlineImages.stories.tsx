@@ -10,7 +10,7 @@ export default {
   component: Component,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
-    layout: "fullscreen",
+    layout: "fullscreen"
   },
 } as ComponentMeta<typeof Component>;
 
@@ -24,35 +24,35 @@ ComponentWithDefaultImage.args = {
     {},
     {
       avatarUrl: sampleAvatarImage,
-      name: "Jon Dew",
+      name: "Jon Dew"
     },
   ],
   totalUserCount: 10,
   elevateOnHover: true,
-  showNameOnHover: true,
+  showNameOnHover: true
 };
 
 export const ComponentWithSpaceInBetween = Template.bind({});
 ComponentWithSpaceInBetween.args = {
   data: [
     {
-      name: "Alice Smith",
+      name: "Alice Smith"
     },
     {
-      name: "Jon Dew",
+      name: "Jon Dew"
     },
     {
-      name: "Bob Johnson",
-    },
+      name: "Bob Johnson"
+    }
   ],
   spaceBetweenPics: 50,
   variant: "square",
   showNameOnHover: true,
   styles: {
     Name: () => ({
-      color: "blue",
-    }),
-  },
+      color: "blue"
+    })
+  }
 };
 
 export const ComponentWithEventHandlers = Template.bind({});
@@ -60,15 +60,15 @@ ComponentWithEventHandlers.args = {
   data: [
     {
       avatarUrl: sampleAvatarImage,
-      name: "Jon Dew",
+      name: "Jon Dew"
     },
     {
       avatarUrl: sampleAvatarImage,
-      name: "Alice Smith",
+      name: "Alice Smith"
     },
     {
       avatarUrl: sampleAvatarImage,
-      name: "Bob Johnson",
+      name: "Bob Johnson"
     },
   ],
   totalUserCount: 6,
@@ -87,12 +87,12 @@ ComponentWithCustomStyles.args = {
   data: [
     {
       avatarUrl: sampleAvatarImage,
-      name: "Jon Dew",
+      name: "Jon Dew"
     },
     {
       avatarUrl: sampleAvatarImage,
-      name: "Alice Smith",
-    },
+      name: "Alice Smith"
+    }
   ],
   totalUserCount: 5,
   variant: "rounded",
@@ -102,20 +102,20 @@ ComponentWithCustomStyles.args = {
   showNameOnHover: true,
   styles: {
     Avatar: () => ({
-      border: "1px solid white",
+      border: "1px solid white"
     }),
     Name: () => ({
       color: "white",
       fontSize: "16px",
       backgroundColor: "grey",
       padding: "5px",
-      borderRadius: "10px",
+      borderRadius: "10px"
     }),
     ExtraCount: () => ({
       backgroundColor: "yellow",
-      border: "1px solid white",
-    }),
-  },
+      border: "1px solid white"
+    })
+  }
 };
 
 export const ComponentWithRenderComponent = Template.bind({});
@@ -124,14 +124,14 @@ ComponentWithRenderComponent.args = {
     {
       avatarUrl: sampleAvatarImage,
       name: "Jon Dew",
-      renderComponent: () => <div>Sample component</div>,
+      renderComponent: () => <div>Sample component</div>
     },
     {
       avatarUrl: sampleAvatarImage,
-      name: "Alice Smith",
-    },
+      name: "Alice Smith"
+    }
   ],
   totalUserCount: 5,
   elevateOnHover: true,
-  showNameOnHover: true,
+  showNameOnHover: true
 };
