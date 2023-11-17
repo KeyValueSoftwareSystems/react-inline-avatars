@@ -38,6 +38,7 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
           <Avatar
             avatarUrl={user.avatarUrl}
             name={user.name}
+            renderComponent = {user.renderComponent}
             elevateOnHover={elevateOnHover}
             showNameOnHover={showNameOnHover}
             onUserClick={(): void => {

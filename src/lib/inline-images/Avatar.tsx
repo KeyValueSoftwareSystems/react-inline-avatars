@@ -10,6 +10,7 @@ const Avatar = (props: AvatarPropType): JSX.Element => {
   const {
     avatarUrl = defaultImage,
     variant,
+    renderComponent,
     size,
     elevateOnHover,
     showNameOnHover,
@@ -43,10 +44,19 @@ const Avatar = (props: AvatarPropType): JSX.Element => {
         id="avatar-image"
         alt="image"
       />
-      {showNameOnHover && name && (
-        <div id="avatar-name" className={classes.name} style={getStyles(Elements.Name, styles)}>
-          {name}
-        </div>
+      {renderComponent ? (
+        <div className={classes.name}>{renderComponent()}</div>
+      ) : (
+        showNameOnHover &&
+        name && (
+          <div
+            id="avatar-name"
+            className={classes.name}
+            style={getStyles(Elements.Name, styles)}
+          >
+            {name}
+          </div>
+        )
       )}
     </div>
   )

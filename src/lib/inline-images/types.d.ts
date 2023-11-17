@@ -3,6 +3,7 @@ export interface AvatarPropType {
   name?: string,
   variant?: 'circular' | 'square' | 'rounded',
   size?: number,
+  renderComponent?: () => JSX.Element,
   elevateOnHover?: boolean,
   showNameOnHover?: boolean,
   onUserClick?: () => void,
@@ -12,7 +13,8 @@ export interface AvatarPropType {
 
 export interface AvatarDataType {
   avatarUrl?: string,
-  name?: string
+  name?: string,
+  renderComponent?: () => JSX.Element
 }
 
 export interface InlineImagesPropType {
@@ -24,7 +26,7 @@ export interface InlineImagesPropType {
   onUserClick?: (user: AvatarDataType) => object,
   onCountClick?: () => void,
   spaceBetweenPics?: number,
-  size?: number;
+  size?: number,
   styles?: StyleProp
 }
 

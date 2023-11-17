@@ -4,7 +4,8 @@ import {
   fireEvent,
   queryByAttribute,
   queryAllByAttribute,
-  waitFor
+  waitFor,
+  getByTestId
 } from "@testing-library/react";
 import '@testing-library/jest-dom';
 
@@ -94,6 +95,31 @@ test("if size is applied correctly", async () => {
     });
   } else {
     throw new Error('Avatar image not found');
+  }
+});
+
+test("If renderComponent is displayed onHover", async () => {
+  const customRenderComponent = () => <div data-testid="custom-rendered-component">Custom Component</div>;
+
+  const inlineImagesProp: InlineImagesPropType = {
+    data: [{ renderComponent: customRenderComponent }],
+    totalUserCount: 10,
+    elevateOnHover: true,
+    showNameOnHover: true
+  };
+  const { container } = render(
+    <InlineImages {...inlineImagesProp} />
+  );
+  const avatarImage = getById(container, 'avatar-image');
+
+  if (avatarImage) {
+    fireEvent.mouseEnter(avatarImage);
+    await waitFor(() => {
+      const renderedComponent = getByTestId(container, "custom-rendered-component");
+      expect(renderedComponent).toBeInTheDocument();
+    });
+  } else {
+    throw new Error('avatar image not found');
   }
 });
 

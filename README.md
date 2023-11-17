@@ -43,6 +43,7 @@ The data is an array of objects with the following keys:
 
 -  `name` - a string that represents each user's name
 -  `avatarUrl` - a string to specify the user image
+-  `renderComponent` - a JSX element that, when provided, enables the dynamic rendering of custom content when hovering over user's image
 
 
 An example for data array is shown below:
@@ -55,6 +56,7 @@ const dataArray = [
   },
   {
     name: "Jack"
+    renderComponent: () => <div className="sample-class"> Sample Component <div>
   }
 ];
 
