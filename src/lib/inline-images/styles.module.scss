@@ -1,27 +1,24 @@
 .avatarContainer {
   width: fit-content;
   height: fit-content;
-  border-radius: 50%;
-  
   .name {
     display: none;
     text-align: center;
+    white-space: nowrap; 
+    margin-top: 5px;
   }
   img {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
     border: 3px solid white;
     transition: all 0.3s;
     &:hover + .name{
         display: flex;
         position: absolute;
         top: 40px;
-        width: 35px;
+        margin-top: 20px;
         justify-content: center;
       }
   }
-  .elivateOnHover {
+  .elevateOnHover {
     cursor: pointer;
     &:hover {
       transform: scale(1.1);
@@ -32,26 +29,30 @@
 }
 .imagesContainer {
   position: relative;
-  margin: 10px;
+  .circular{
+    border-radius: 50%;
+  }
+  .square{
+    border-radius: 0%;
+  }
+  .rounded{
+    border-radius: 10px;
+  }
   .eachImage {
     position: absolute;
     left: 0;
     top: 0;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
   }
-  .extraValue {
+  .extraCount {
     border: 3px solid white;
     background: floralwhite;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: indigo;
     transition: all 0.3s;
-    cursor: default;
+    cursor: pointer;
   }
-  .elivateOnHover {
+  .elevateOnHover {
     cursor: pointer;
     &:hover {
       transform: scale(1.1);

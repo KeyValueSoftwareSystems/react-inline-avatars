@@ -1,25 +1,37 @@
 export interface AvatarPropType {
   avatarUrl?: string,
   name?: string,
-  elivateOnHover?: boolean,
-  nameOnHover?: boolean,
+  variant?: 'circular' | 'square' | 'rounded',
+  size?: number,
+  renderComponent?: () => JSX.Element,
+  elevateOnHover?: boolean,
+  showNameOnHover?: boolean,
   onUserClick?: () => void,
   styles?: StyleProp,
   id?: string
 }
 
+export interface AvatarDataType {
+  avatarUrl?: string,
+  name?: string,
+  renderComponent?: () => JSX.Element
+}
+
 export interface InlineImagesPropType {
-  data: AvatarPropType[],
+  data: AvatarDataType[],
   totalUserCount?: number,
-  elivateOnHover?: boolean,
-  nameOnHover?: boolean,
-  onUserClick?: (user: AvatarPropType) => object,
+  variant?: 'circular' | 'square' | 'rounded',
+  elevateOnHover?: boolean,
+  showNameOnHover?: boolean,
+  onUserClick?: (user: AvatarDataType) => object,
+  onCountClick?: () => void,
   spaceBetweenPics?: number,
+  size?: number,
   styles?: StyleProp
 }
 
 export type StyleProp = {
   Avatar?: () => object ,
-  ExtraValue?: () => object,
+  ExtraCount?: () => object,
   Name?: () => object
 }
