@@ -1,6 +1,6 @@
 {
   "name": "@keyvaluesystems/react-multi-inline-images",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "description": "A Multi Inline Images stack",
   "main": "build/index.js",
   "source": "src/lib/index.tsx",
