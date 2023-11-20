@@ -69,7 +69,7 @@ If no avatarUrl is specified for the user, following default Image will be consi
 </div>
 
 
-## v1.1.5 (Major Version Change)
+## v1.0.0 (Major Version Change)
 
 This release includes breaking changes, new features, and updates. Please read this document carefully before upgrading
 
@@ -83,7 +83,7 @@ This release includes breaking changes, new features, and updates. Please read t
 
 - Replace `elivateOnHover` with elevateOnHover: The `elivateOnHover` prop has been replaced with `elevateOnHover`.
 - Replace `nameOnHover` with showNameOnHover: The `nameOnHover` prop has been replaced with `showNameOnHover`.
-- Utilize `ExtraCount` class instead of `ExtraValue` class: To overrides the style of additional count displayed at last bubble.
+- Utilize `ExtraCount` class instead of `ExtraValue` class: To override the style of additional count displayed at last bubble.
 
 <b>Before</b>
 
@@ -205,7 +205,7 @@ Props that can be passed to the component are listed below:
 
 ## Style Customizations
 
-All the default styles provided by this package are overridable using the `style` prop.
+All the default styles provided by this package are overridable using the `styles` prop.
 The below code shows all the overridable styles:
 
 ```jsx
