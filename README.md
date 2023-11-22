@@ -1,50 +1,40 @@
+# React Inline Avatars
 
-  
-  
-
-# React Multi Inline Images
-
-<a href="https://www.npmjs.com/package/@keyvaluesystems/react-multi-inline-images"><img src="https://badgen.net/npm/v/@keyvaluesystems/react-multi-inline-images?color=blue" alt="npm version"></a> <a href="https://www.npmjs.com/package/@keyvaluesystems/react-multi-inline-images" ><img src="https://img.shields.io/npm/dw/@keyvaluesystems/react-multi-inline-images?label=Downloads" /></a> <a href="https://github.com/KeyValueSoftwareSystems/react-multi-inline-images"><img src="https://github.com/KeyValueSoftwareSystems/react-multi-inline-images/actions/workflows/deploy.yml/badge.svg" alt="" /></a>
+<a href="https://www.npmjs.com/package/@keyvaluesystems/react-inline-avatars"><img src="https://badgen.net/npm/v/@keyvaluesystems/react-inline-avatars?color=blue" alt="npm version"></a> <a href="https://www.npmjs.com/package/@keyvaluesystems/react-inline-avatars" ><img src="https://img.shields.io/npm/dw/@keyvaluesystems/react-inline-avatars?label=Downloads" /></a> <a href="https://github.com/KeyValueSoftwareSystems/react-multi-inline-images"><img src="https://github.com/KeyValueSoftwareSystems/react-multi-inline-images/actions/workflows/deploy.yml/badge.svg" alt="" /></a>
 
 <div align="center">
 <img src="./screenshot.png" alt="" width="280" height="80"/>
 </div>
 
- 
-> A customizable ready to use Multiple Inline Image stack for React
+> A customizable ready to use Inline Avatar stack for React
 
-Try tweaking a multiple inline image stack using this codesandbox link <a href="https://codesandbox.io/s/react-multi-inline-images-2lvdgf" >here</a>
+Try tweaking a inline avatar stack using this codesandbox link <a href="https://codesandbox.io/p/sandbox/react-inline-avatars-2lvdgf" >here</a>
 
 ## Installation
 
-The easiest way to use react-multi-inline-images is to install it from npm and build it into your app with Webpack.
+The easiest way to use react-inline-avatars is to install it from npm and build it into your app with Webpack.
 
 ```bash
-npm install @keyvaluesystems/react-multi-inline-images
+npm install @keyvaluesystems/react-inline-avatars
 ```
 
 You’ll need to install React separately since it isn't included in the package.
 
 ## Usage
 
-React Multi Inline Images can run in a very basic mode by just providing the `data` like given below:
+React Inline Avatars can run in a very basic mode by just providing the `data` like given below:
 
 ```jsx
+import InlineImages from "@keyvaluesystems/react-inline-avatars";
 
-import InlineImages from "@keyvaluesystems/react-multi-inline-images";
-
-<InlineImages
-  data={dataArray}
-/>
-
+<InlineImages data={dataArray} />;
 ```
 
 The data is an array of objects with the following keys:
 
--  `name` - a string that represents each user's name
--  `avatarUrl` - a string to specify the user image
--  `renderComponent` - a JSX element that, when provided, enables the dynamic rendering of custom content when hovering over user's image
-
+- `name` - a string that represents each user's name
+- `avatarUrl` - a string to specify the user image
+- `renderComponent` - a JSX element that, when provided, enables the dynamic rendering of custom content when hovering over user's image
 
 An example for data array is shown below:
 
@@ -74,6 +64,7 @@ If no avatarUrl is specified for the user, following default Image will be consi
 This release includes breaking changes, new features, and updates. Please read this document carefully before upgrading
 
 ### Breaking Changes
+
 - `elivateOnHover` prop is renamed to `elevateOnHover`.
 - `nameOnHover` prop is renamed to `showNameOnHover`.
 - `ExtraValue` class is renamed to `ExtraCount`.
@@ -114,9 +105,8 @@ This release includes breaking changes, new features, and updates. Please read t
   }}
 />
 ```
-## Props
 
-  
+## Props
 
 Props that can be passed to the component are listed below:
 
@@ -202,7 +192,6 @@ Props that can be passed to the component are listed below:
   </tbody>
 </table>
 
-
 ## Style Customizations
 
 All the default styles provided by this package are overridable using the `styles` prop.
@@ -219,6 +208,7 @@ The below code shows all the overridable styles:
 />
 
 ```
--  `Avatar` - overrides the avatar (user image) style
--  `Name` - overrides the user name style 
--  `ExtraCount` - overrides the style of additional count displayed at last bubble
+
+- `Avatar` - overrides the avatar (user image) style
+- `Name` - overrides the user name style
+- `ExtraCount` - overrides the style of additional count displayed at last bubble

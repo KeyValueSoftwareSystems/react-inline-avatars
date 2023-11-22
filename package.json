@@ -1,7 +1,7 @@
 {
-  "name": "@keyvaluesystems/react-multi-inline-images",
+  "name": "@keyvaluesystems/react-inline-avatars",
   "version": "1.0.0",
-  "description": "A Multi Inline Images stack",
+  "description": "A customizable Inline Avatar stack",
   "main": "build/index.js",
   "source": "src/lib/index.tsx",
   "types": "build/types/index.d.ts",
@@ -108,8 +108,5 @@
       "jsx",
       "node"
     ]
-  },
-  "dependencies": {
-    "eslint-plugin-import": "^2.29.0"
   }
 }

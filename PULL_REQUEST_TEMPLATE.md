@@ -1,4 +1,4 @@
-<!-- Thank you for contributing to @keyvaluesystems/react-multi-inline-images! -->
+<!-- Thank you for contributing to @keyvaluesystems/react-inline-avatars! -->
 <!-- Before submitting a pull request, please review our contributing guidelines. -->
 
 ​

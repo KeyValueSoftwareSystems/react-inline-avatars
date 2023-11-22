@@ -1,8 +1,8 @@
-## SCSS Style Guidelines for @keyvaluesystems/react-multi-inline-images
+## SCSS Style Guidelines for @keyvaluesystems/react-inline-avatars
 
 **Introduction**
 
-As an open-source project utilizing SCSS, @keyvaluesystems/react-multi-inline-images strives to maintain a consistent and well-structured codebase. These SCSS style guidelines serve as a reference for contributors, ensuring that their SCSS code adheres to established conventions and best practices.
+As an open-source project utilizing SCSS, @keyvaluesystems/react-inline-avatars strives to maintain a consistent and well-structured codebase. These SCSS style guidelines serve as a reference for contributors, ensuring that their SCSS code adheres to established conventions and best practices.
 
 **SCSS Coding Conventions**
 
