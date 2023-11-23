@@ -1,6 +1,6 @@
 # React Inline Avatars
 
-<a href="https://www.npmjs.com/package/@keyvaluesystems/react-inline-avatars"><img src="https://badgen.net/npm/v/@keyvaluesystems/react-inline-avatars?color=blue" alt="npm version"></a> <a href="https://www.npmjs.com/package/@keyvaluesystems/react-inline-avatars" ><img src="https://img.shields.io/npm/dw/@keyvaluesystems/react-inline-avatars?label=Downloads" /></a> <a href="https://github.com/KeyValueSoftwareSystems/react-multi-inline-images"><img src="https://github.com/KeyValueSoftwareSystems/react-multi-inline-images/actions/workflows/deploy.yml/badge.svg" alt="" /></a>
+<a href="https://www.npmjs.com/package/@keyvaluesystems/react-inline-avatars"><img src="https://badgen.net/npm/v/@keyvaluesystems/react-inline-avatars?color=blue" alt="npm version"></a> <a href="https://www.npmjs.com/package/@keyvaluesystems/react-inline-avatars" ><img src="https://img.shields.io/npm/dw/@keyvaluesystems/react-inline-avatars?label=Downloads" /></a> <a href="https://github.com/KeyValueSoftwareSystems/react-inline-avatars"><img src="https://github.com/KeyValueSoftwareSystems/react-inline-avatars/actions/workflows/deploy.yml/badge.svg" alt="" /></a>
 
 <div align="center">
 <img src="./screenshot.png" alt="" width="280" height="80"/>

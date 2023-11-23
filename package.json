@@ -1,6 +1,6 @@
 {
   "name": "@keyvaluesystems/react-inline-avatars",
-  "version": "1.0.0",
+  "version": "0.1.5",
   "description": "A customizable Inline Avatar stack",
   "main": "build/index.js",
   "source": "src/lib/index.tsx",
@@ -21,11 +21,11 @@
   },
   "repository": {
     "type": "github",
-    "url": "https://github.com/KeyValueSoftwareSystems/react-multi-inline-images"
+    "url": "https://github.com/KeyValueSoftwareSystems/react-inline-avatars"
   },
   "author": "Keyvalue",
   "license": "",
-  "homepage": "https://github.com/KeyValueSoftwareSystems/react-multi-inline-images",
+  "homepage": "https://github.com/KeyValueSoftwareSystems/react-inline-avatars",
   "keywords": [
     "library",
     "starter",
