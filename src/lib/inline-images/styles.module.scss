@@ -10,6 +10,11 @@
   img {
     border: 3px solid white;
     transition: all 0.3s;
+    &.elevateOnHover:hover {
+      transform: scale(1.1); 
+      z-index: 10;
+      position: relative;
+    }
     &:hover + .name{
         display: flex;
         position: absolute;
@@ -18,17 +23,8 @@
         justify-content: center;
       }
   }
-  .elevateOnHover {
-    cursor: pointer;
-    &:hover {
-      transform: scale(1.1);
-      z-index: 10;
-      position: absolute;
-    }
-  }
 }
 .imagesContainer {
-  position: relative;
   .circular{
     border-radius: 50%;
   }
@@ -53,11 +49,9 @@
     cursor: pointer;
   }
   .elevateOnHover {
-    cursor: pointer;
     &:hover {
       transform: scale(1.1);
       z-index: 10;
-      position: absolute;
     }
   }
 }
