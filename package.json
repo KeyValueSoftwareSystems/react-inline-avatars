@@ -24,12 +24,14 @@
     "url": "https://github.com/KeyValueSoftwareSystems/react-inline-avatars"
   },
   "author": "Keyvalue",
-  "license": "",
+  "license": "MIT",
   "homepage": "https://github.com/KeyValueSoftwareSystems/react-inline-avatars",
   "keywords": [
     "library",
     "starter",
-    "es6"
+    "es6",
+    "react",
+    "nextjs"
   ],
   "devDependencies": {
     "@babel/cli": "^7.20.7",

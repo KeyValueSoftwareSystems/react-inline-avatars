@@ -20,6 +20,8 @@ npm install @keyvaluesystems/react-inline-avatars
 
 You’ll need to install React separately since it isn't included in the package.
 
+Note for **Next.js** users, if you are using Next.js version 13 or later, you will have to use the `use client` feature to ensure proper compatibility.
+
 ## Usage
 
 React Inline Avatars can run in a very basic mode by just providing the `data` like given below:
@@ -209,6 +211,6 @@ The below code shows all the overridable styles:
 
 ```
 
-- `Avatar` - overrides the avatar (user image) style
-- `Name` - overrides the user name style
-- `ExtraCount` - overrides the style of additional count displayed at last bubble
+- `Avatar` - Overrides the avatar (user image) style
+- `Name` - Overrides the user name style
+- `ExtraCount` - Overrides the style of additional count displayed at last bubble

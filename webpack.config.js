@@ -33,7 +33,8 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     library: "InlineAvatars",
     libraryTarget: 'umd',
-    clean: true
+    clean: true,
+    globalObject: 'this'
   },
   externals: {
     'react': 'react'
