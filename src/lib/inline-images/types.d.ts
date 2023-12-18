@@ -2,6 +2,7 @@ export interface AvatarPropType {
   avatarUrl?: string,
   name?: string,
   variant?: 'circular' | 'square' | 'rounded',
+  defaultAvatarImage?: string,
   size?: number,
   renderComponent?: () => JSX.Element,
   elevateOnHover?: boolean,
@@ -19,6 +20,7 @@ export interface AvatarDataType {
 
 export interface InlineImagesPropType {
   data: AvatarDataType[],
+  defaultAvatarImage?: string,
   totalUserCount?: number,
   variant?: 'circular' | 'square' | 'rounded',
   elevateOnHover?: boolean,

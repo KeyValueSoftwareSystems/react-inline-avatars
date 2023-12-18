@@ -47,11 +47,12 @@ const dataArray = [
     avatarUrl: "example.svg"
   },
   {
-    name: "Jack"
-    renderComponent: () => <div className="sample-class"> Sample Component <div>
+    name: "Jack",
+    renderComponent: () => (
+      <div className="sample-class"> Sample Component </div>
+    )
   }
 ];
-
 ```
 
 If no avatarUrl is specified for the user, following default Image will be considered.
@@ -88,7 +89,7 @@ This release includes breaking changes, new features, and updates. Please read t
   styles={{
     Avatar: () => ({ ...styles }),
     Name: () => ({ ...styles }),
-    ExtraValue: () => ({ ...styles }),
+    ExtraValue: () => ({ ...styles })
   }}
 />
 ```
@@ -103,7 +104,7 @@ This release includes breaking changes, new features, and updates. Please read t
   styles={{
     Avatar: () => ({ ...styles }),
     Name: () => ({ ...styles }),
-    ExtraCount: () => ({ ...styles }),
+    ExtraCount: () => ({ ...styles })
   }}
 />
 ```
@@ -140,7 +141,7 @@ Props that can be passed to the component are listed below:
       <td>
       To specify the size of the image element
       </td>
-      <td><code>40px</code></td>
+      <td><code>40</code></td>
     </tr>
      <tr>
       <td><code><b>variant?:</b> 'circular' | 'square' | 'rounded'</code></td>
@@ -159,19 +160,26 @@ Props that can be passed to the component are listed below:
     <tr>
       <td><code><b>showNameOnHover?:</b> boolean</code></td>
       <td>
-        To show the name of each user on hovering over the user image
+        To show the name of each user on hovering over the user image. If there is a specified render component in the data array, it will be displayed instead of the name when you hover over the user's image
       </td>
       <td><code>false</code></td>
     </tr>
+      <tr>
+      <td><code><b>defaultAvatarImage?:</b> string</code></td>
+      <td>
+       To show a default avatar, if no avatarUrl is specified for a user. if there is no specified avatarUrl and defaultAvatarImage, default image will be considered.
+      </td>
+      <td><code><img src="./src/assets/default-avatar.svg" alt="" width="40" height="40"/></code></td>
+    </tr>
     <tr>
-      <td><code><b>onUserClick?:</b> function</code></td>
+      <td><code><b>onUserClick?:</b>(user: object) => void</code></td>
       <td>
         A callback function to be triggered on image click
       </td>
       <td><code>undefined</code></td>
     </tr>
      <tr>
-      <td><code><b>onCountClick?:</b> function</code></td>
+      <td><code><b>onCountClick?:</b>() => void</code></td>
       <td>
         A callback function to be triggered on additional count(last bubble) click
       </td>
@@ -214,3 +222,28 @@ The below code shows all the overridable styles:
 - `Avatar` - Overrides the avatar (user image) style
 - `Name` - Overrides the user name style
 - `ExtraCount` - Overrides the style of additional count displayed at last bubble
+
+Example with the usage of other props
+
+```jsx
+<InlineImages
+  data={dataArray}
+  styles= {
+    Avatar: () => ({
+      border: "1px solid white"
+    }),
+    Name: () => ({
+      color: "white",
+      fontSize: "16px",
+      backgroundColor: "grey",
+      padding: "5px",
+      borderRadius: "10px"
+    }),
+    ExtraCount: () => ({
+      backgroundColor: "yellow",
+      border: "1px solid white"
+    })
+  }
+/>
+
+```

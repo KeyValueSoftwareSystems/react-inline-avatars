@@ -56,7 +56,7 @@ test("If additional count displayed on image stack", async () => {
 
   if (dom) {
     const extraCount = await getById(dom.container, "inline-images-extra-count");
-    expect(extraCount.innerHTML).toBe("8 +");
+    expect(extraCount.innerHTML).toBe("+8");
   }
 });
 
