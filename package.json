@@ -1,6 +1,6 @@
 {
   "name": "@keyvaluesystems/react-inline-avatars",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A customizable Inline Avatar stack",
   "main": "build/index.js",
   "source": "src/lib/index.tsx",
