@@ -38,7 +38,7 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
           id="inline-images"
         >
           <Avatar
-            avatarUrl={user.avatarUrl || defaultAvatarImage}
+            avatarUrl={user.avatarUrl}
             name={user.name}
             renderComponent={user.renderComponent}
             elevateOnHover={elevateOnHover}

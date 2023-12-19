@@ -33,7 +33,7 @@ const Avatar = (props: AvatarPropType): JSX.Element => {
         className={`${variant && classes[variant]} ${
           elevateOnHover && classes.elevateOnHover
         }`}
-        src={avatarUrl}
+        src={avatarUrl || defaultAvatarImage}
         style={{
           width: `${size}px`,
           height: `${size}px`,
