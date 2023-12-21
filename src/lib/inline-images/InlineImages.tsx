@@ -64,6 +64,7 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
             left: `${data?.length * spaceBetweenPics}px`,
             width: `${size}px`,
             height: `${size}px`,
+            // Adjust the font size of the value based on the number of digits and size of the bubble
             fontSize: `${
               size *
               (0.4 - 0.03 * Math.log10(Math.abs(totalUserCount - data?.length)))
