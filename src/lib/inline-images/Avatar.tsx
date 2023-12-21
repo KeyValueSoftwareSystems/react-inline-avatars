@@ -8,7 +8,8 @@ import classes from "./styles.module.scss";
 
 const Avatar = (props: AvatarPropType): JSX.Element => {
   const {
-    avatarUrl = defaultImage,
+    avatarUrl,
+    defaultAvatarImage = defaultImage,
     variant,
     renderComponent,
     size,
@@ -32,14 +33,14 @@ const Avatar = (props: AvatarPropType): JSX.Element => {
         className={`${variant && classes[variant]} ${
           elevateOnHover && classes.elevateOnHover
         }`}
-        src={avatarUrl}
+        src={avatarUrl || defaultAvatarImage}
         style={{
           width: `${size}px`,
           height: `${size}px`,
           ...getStyles(Elements.Avatar, styles)
         }}
         onError={(e: React.SyntheticEvent<HTMLImageElement, Event>): void => {
-          e.currentTarget.src = defaultImage;
+          e.currentTarget.src = defaultAvatarImage;
         }}
         id="avatar-image"
         alt="image"
@@ -52,14 +53,14 @@ const Avatar = (props: AvatarPropType): JSX.Element => {
           <div
             id="avatar-name"
             className={classes.name}
-            style={getStyles(Elements.Name, styles)}
+            style={{ top: `${size}px`, ...getStyles(Elements.Name, styles) }}
           >
             {name}
           </div>
         )
       )}
     </div>
-  )
+  );
 };
 
 export default Avatar;

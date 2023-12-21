@@ -18,13 +18,13 @@
     &:hover + .name{
         display: flex;
         position: absolute;
-        top: 40px;
         margin-top: 20px;
         justify-content: center;
       }
   }
 }
 .imagesContainer {
+  position: relative;
   .circular{
     border-radius: 50%;
   }

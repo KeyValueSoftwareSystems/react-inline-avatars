@@ -11,7 +11,7 @@ export default {
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
     layout: "fullscreen"
-  },
+  }
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (props) => (
@@ -25,15 +25,15 @@ ComponentWithDefaultImage.args = {
     {
       avatarUrl: sampleAvatarImage,
       name: "Jon Dew"
-    },
+    }
   ],
   totalUserCount: 10,
   elevateOnHover: true,
   showNameOnHover: true
 };
 
-export const ComponentWithSpaceInBetween = Template.bind({});
-ComponentWithSpaceInBetween.args = {
+export const ComponentWithSpaceInBetweenAndDefaultAvatarImage = Template.bind({});
+ComponentWithSpaceInBetweenAndDefaultAvatarImage.args = {
   data: [
     {
       name: "Alice Smith"
@@ -47,6 +47,7 @@ ComponentWithSpaceInBetween.args = {
   ],
   spaceBetweenPics: 50,
   variant: "square",
+  defaultAvatarImage: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
   showNameOnHover: true,
   styles: {
     Name: () => ({
@@ -69,7 +70,7 @@ ComponentWithEventHandlers.args = {
     {
       avatarUrl: sampleAvatarImage,
       name: "Bob Johnson"
-    },
+    }
   ],
   totalUserCount: 6,
   elevateOnHover: true,
@@ -79,7 +80,7 @@ ComponentWithEventHandlers.args = {
   },
   onCountClick: () => {
     alert(`Clicked on the additional count`);
-  },
+  }
 };
 
 export const ComponentWithCustomStyles = Template.bind({});

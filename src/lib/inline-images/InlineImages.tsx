@@ -1,5 +1,6 @@
 import React from "react";
 
+import defaultImage from "../../assets/default-avatar.svg";
 import {
   DEFAULT_AVATAR_SIZE,
   DEFAULT_SPACE_BETWEEN_PICS,
@@ -16,6 +17,7 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
     totalUserCount,
     elevateOnHover,
     showNameOnHover,
+    defaultAvatarImage = defaultImage,
     onUserClick,
     onCountClick,
     size = DEFAULT_AVATAR_SIZE,
@@ -28,7 +30,7 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
     <div className={classes.imagesContainer}>
       {data?.map((user: AvatarDataType, index: number) => (
         <div
-          key={user && user.name ?`${user.name}-${index}`: index}
+          key={user && user.name ? `${user.name}-${index}` : index}
           className={classes.eachImage}
           style={{
             left: `${index * spaceBetweenPics}px`
@@ -38,12 +40,13 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
           <Avatar
             avatarUrl={user.avatarUrl}
             name={user.name}
-            renderComponent = {user.renderComponent}
+            renderComponent={user.renderComponent}
             elevateOnHover={elevateOnHover}
             showNameOnHover={showNameOnHover}
             onUserClick={(): void => {
               if (onUserClick) onUserClick(user);
             }}
+            defaultAvatarImage={defaultAvatarImage}
             variant={variant}
             size={size}
             id={`inline-image-${index}`}
@@ -61,12 +64,17 @@ const InlineImages = (props: InlineImagesPropType): JSX.Element => {
             left: `${data?.length * spaceBetweenPics}px`,
             width: `${size}px`,
             height: `${size}px`,
+            // Adjust the font size of the value based on the number of digits and size of the bubble
+            fontSize: `${
+              size *
+              (0.4 - 0.03 * Math.log10(Math.abs(totalUserCount - data?.length)))
+            }px`,
             ...getStyles(Elements.ExtraCount, styles)
           }}
           onClick={onCountClick}
           id="inline-images-extra-count"
         >
-          {totalUserCount - data?.length} +
+          +{totalUserCount - data?.length}
         </div>
       )}
     </div>
